@@ -1,17 +1,18 @@
-codigo_lanche, quanti_lanche = [int(w) for w in input().split()]
+pedido = int(input("Escolha seu lanche conforme o cardápio: "))
+total = 0
 
-match codigo_lanche:
+match pedido:
     case 1:
-        lanche = 4.00
+        total = 8.00
+        lanche = "Cachorro-Quente"
     case 2:
-        lanche = 4.50
+        total = 12.00
+        lanche = "X-Salada"
     case 3:
-        lanche = 5.00
+        total = 15.00
+        lanche = "X-Bacon"
     case 4:
-        lanche = 2.00
-    case 5:
-        lanche = 1.50
+        total = 5.00
+        lanche = "Refrigerante"
         
-total = lanche * quanti_lanche
-
-print (total)
+print(f"Você pediu {lanche} portanto seu total é R$ {total:.2f}")
