@@ -1,14 +1,23 @@
+def calculadora(operacao, n1, n2):
+    match operacao:
+        case "+":
+            return n1 + n2
+        case "-":
+            return n1 - n2
+        case "*" | "x":
+            return n1 * n2
+        case "/":
+            if n2 == 0:
+                return 0
+            else:
+                return n1 / n2
+        case "^":
+            return n1 ** n2
+        case "%":
+            return n1 % n2
+
 while True:
-    resultado = 0
-    n1, n2 = input("Digite os números que gostaria de cálcular: ").split()
-    operacao = input("Digite a operação que gostaria de realizar (+, -, x, ÷): ")
-    if operacao == "+":
-        resultado = float(n1) + float(n2)
-    elif operacao == "-":
-        resultado = float(n1) - float(n2)
-    elif operacao == "*" or operacao == "x":
-        resultado = float(n1) * float(n2)
-    else:
-        resultado = float(n1) / float(n2)
-    print(resultado)
-    
+    operacao = input("Qual operação gostaria de realizar? (+, -, x, ÷, ^, %) ")
+    n1, n2 = [int(x) for x in input("Digite os números que gostaria de calcular: ").split()]
+    total = calculadora(operacao, n1, n2)
+    print(f"O resultado da operação é: {total}")
